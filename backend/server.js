@@ -27,7 +27,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
         formData.append("pdf", blob, 'uploaded_pdf.pdf');
 
         // Call the Flask AI model (running on port 5001) for processing
-        const response = await axios.post('http://localhost:5001/process-pdf', formData, {
+        const response = await axios.post('https://pdf-intelliextract.onrender.com/process-pdf', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             }
